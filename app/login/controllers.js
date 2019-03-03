@@ -1,4 +1,7 @@
 'use strict';
+
+import { async } from "q";
+
  
 angular.
 module('Authentication')
@@ -11,16 +14,25 @@ module('Authentication')
         // reset login status
         AuthenticationService.ClearCredentials();
  
-        $scope.login = function () {
+        $scope.login = async function () {
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.email, $scope.password, function(response) {
                 if(response.success) {
                     AuthenticationService.SetCredentials($scope.email, $scope.password);
-                    $location.path('/');
+                    $location.path('/transactions');
                 } else {
                     $scope.error = response.message;
                     $scope.dataLoading = false;
                 }
             });
+
+            // let response = await AuthenticationService.loginVili($scope.email, $scope.password);
+            // if (response.success) {
+            //     AuthenticationService.SetCredentials($scope.email, $scope.password);
+            //     $location.path('/transactions');
+            // } else {
+            //     $scope.error = response.message;
+            //     $scope.dataLoading = false;
+            // }
         };
     }]);

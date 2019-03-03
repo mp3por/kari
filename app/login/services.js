@@ -7,6 +7,12 @@ angular.module('Authentication')
     function (Base64, $http, $rootScope, $timeout) {
         var service = {};
 
+        service.loginVili = function (email, password) {
+            let response = { success: email === 'test@email.com' && password === 'test' };
+
+            return $timeout(response, 1000);
+        }
+
         service.Login = function (email, password, callback) {
 
             $timeout(function(){
