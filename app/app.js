@@ -7,14 +7,13 @@ angular.
 module('peachtreeApp', [
     'Authentication',
     'Transactions',
-    'ngRoute',
-    'ngCookies'
+    'ngRoute'
 ])
  
 .config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
-        .when('/', {
+        .when('/login', {
             controller: 'LoginController',
             templateUrl: 'login/views/login.html',
             hideMenus: true
@@ -25,20 +24,20 @@ module('peachtreeApp', [
              templateUrl: 'transactions/views/transactions.html'
          })
  
-        .otherwise({ redirectTo: '/' });
+        .otherwise({ redirectTo: '/login' });
 }])
  
-.run(['$rootScope', '$location', '$cookieStore', '$http',
-    function ($rootScope, $location, $cookieStore, $http) {
+.run(['$rootScope', '$location', '$http',
+    function ($rootScope, $location, $http) {
         // keep user logged in after page refresh
-        $rootScope.globals = $cookieStore.get('globals') || {};
+        $rootScope.globals = {};
         if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; 
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata.access_token; 
         }
  
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in
-            if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+            if (!$rootScope.globals.currentUser) {
                 $location.path('/login');
             }
         });
