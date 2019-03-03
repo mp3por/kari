@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="peachtreeApp">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Peachtree Bank</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-mocks/angular-mocks.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+    <script src="app.js"></script>
+    <script src="login/controllers.js"></script>
+    <script src="login/services.js"></script>
+  </head>
+
+  <body>  
+    <div class="jumbotron">
+      <div class="container">
+        <div class="col-xs-offset-2 col-xs-8">
+          <div ng-view></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
