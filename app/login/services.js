@@ -5,28 +5,17 @@ angular.module('Authentication')
 .factory('AuthenticationService',
     ['Base64', '$http', '$rootScope', '$timeout',
     function (Base64, $http, $rootScope, $timeout) {
-        var service = {};
+        let service = {};
 
-        service.loginVili = function (email, password) {
+        service.Login = function (email, password) {
             let response = { success: email === 'test@email.com' && password === 'test' };
 
             return $timeout(response, 1000);
-        }
-
-        service.Login = function (email, password, callback) {
-
-            $timeout(function(){
-                var response = { success: email === 'test@email.com' && password === 'test' };
-                if(!response.success) {
-                    response.message = 'Email or password is incorrect';
-                }
-                callback(response);
-            }, 1000);
 
         };
  
         service.SetCredentials = function (email, password) {
-            var authdata = Base64.encode(email + ':' + password);
+            let authdata = Base64.encode(email + ':' + password);
  
             $rootScope.globals = {
                 currentUser: {
@@ -36,12 +25,10 @@ angular.module('Authentication')
             };
  
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
-            // $cookieStore.put('globals', $rootScope.globals);
         };
  
         service.ClearCredentials = function () {
             $rootScope.globals = {};
-            // $cookieStore.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic ';
         };
  

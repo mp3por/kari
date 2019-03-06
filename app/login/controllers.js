@@ -25,14 +25,5 @@ module('Authentication')
                     $scope.dataLoading = false;
                 }
             });
-
-            // let response = await AuthenticationService.loginVili($scope.email, $scope.password);
-            // if (response.success) {
-            //     AuthenticationService.SetCredentials($scope.email, $scope.password);
-            //     $location.path('/transactions');
-            // } else {
-            //     $scope.error = response.message;
-            //     $scope.dataLoading = false;
-            // }
         };
     }]);

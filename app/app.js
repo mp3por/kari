@@ -21,7 +21,7 @@ module('peachtreeApp', [
  
          .when('/transactions', {
              controller: 'TransactionsController',
-             templateUrl: 'transactions/views/transactions.html'
+             templateUrl: 'transactions/views/transactions.html',
          })
  
         .otherwise({ redirectTo: '/login' });
