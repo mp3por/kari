@@ -10,7 +10,6 @@ module('Authentication')
     ['$scope', '$rootScope', '$location', 'AuthenticationService',
     function ($scope, $rootScope, $location, AuthenticationService) {
 
-        console.log('LoginController');
         // reset login status
         AuthenticationService.ClearCredentials();
  
