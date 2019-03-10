@@ -1,7 +1,7 @@
 'use strict';
  
 angular.
-module('peachtreeApp').component('Authentication')
+module('peachtreeApp')
  
 .controller('LoginController',
     ['$scope', '$rootScope', '$location', 'AuthenticationService', '$state',

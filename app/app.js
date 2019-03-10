@@ -6,13 +6,13 @@
 let ptApp = angular
   .module('peachtreeApp', ['ui.router']);
 
-ptApp.config(['$stateProvider', '$urlRouteProvider', function($stateProvider, $urlRouteProvider) {
+ptApp.config(['$stateProvider', function($stateProvider) {
+      console.log('app.js - config');
       $stateProvider
         .state("login", {
           url: "/login",
           templateUrl: "login/views/login.html",
-          controller: "LoginController",
-          hideMenus: true
+          controller: "LoginController"
         })
 
         .state("transactions", {
@@ -30,6 +30,7 @@ ptApp.config(['$stateProvider', '$urlRouteProvider', function($stateProvider, $u
     "$location",
     "$http",
     function($rootScope, $location, $http) {
+      console.log('app.js - run');
       // keep user logged in after page refresh
       $rootScope.globals = {};
       if ($rootScope.globals.currentUser) {
