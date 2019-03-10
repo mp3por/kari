@@ -8,10 +8,10 @@ angular.module('Authentication', [])
         let service = {};
 
         service.Login = function (email, password) {
-            console.log('AuthenticationService login');
+            
             let response = { success: email === 'test@email.com' && password === 'test' };
 
-            return $timeout(response, 1000);
+            return $timeout(() => { return response;}, 1000);
 
         };
  

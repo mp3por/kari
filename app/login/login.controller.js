@@ -4,19 +4,23 @@ angular.
 module('peachtreeApp')
  
 .controller('LoginController',
-    ['$scope', '$rootScope', '$location', 'AuthenticationService', '$state',
-    function ($scope, $rootScope, $location, AuthenticationService, $state) {
+    ['$scope', 'AuthenticationService', '$state',
+    function ($scope, AuthenticationService, $state) {
+
+        $scope.email = 'test@email.com';
+        $scope.password = 'test';
 
         // reset login status
         AuthenticationService.ClearCredentials();
  
         $scope.login = async function () {
-            console.log('login');
+
             $scope.dataLoading = true;
-            AuthenticationService.Login($scope.email, $scope.password, function(response) {
+            AuthenticationService.Login($scope.email, $scope.password).then(function(response) {
                 if(response.success) {
+                    console.log('login.controller login.success');
                     AuthenticationService.SetCredentials($scope.email, $scope.password);
-                    $location.path('/login');
+                    $state.go('home');
                 } else {
                     $scope.error = response.message;
                     $scope.dataLoading = false;
