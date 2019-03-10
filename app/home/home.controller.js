@@ -2,7 +2,7 @@
  
 let Home = 
 angular.
-module('peachtreeApp', [ui.router]);
+module('peachtreeApp');
 
 // Home.config(function($stateProvider){
 
