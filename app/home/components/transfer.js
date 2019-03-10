@@ -1,8 +1,21 @@
-angular.module('peachtreeApp').directive('transferMoney', function(){
+angular.module('peachtreeApp')
+.controller('transferController', ["$scope", function($scope){
+    
+    $scope.vili = 'OMG';
+    $scope.kari = { BLQT : true };
+    
+    $scope.transaction = {};
+    $scope.transaction.amount = 10;
+}])
+.directive('transferMoney', function(){
     return {
-        templateUrl: '../views/transfer.html',
+        templateUrl: 'home/views/transfer.html',  
         controller: 'transferController'
     };
-}).controller('transferController', ["$scope", function($scope){
-    $scope.amount = 10;
-}]);
+})
+.directive('transferMoneyTwo', function () {
+    return {
+        templateUrl: 'home/views/transfer2.html',
+        controller: 'transferController'
+    };
+});

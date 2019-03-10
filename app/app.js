@@ -21,21 +21,21 @@ ptApp.config(['$stateProvider', function($stateProvider) {
         //   controller: "HomeController",
         })
 
-        .state("transactions",{
-            url: "/transactions",
-            component: "/transactions",
-            resolve: {
-                transactions: function(TransactionsService) {
-                    return TransactionsService.getAllTransactrions();
-                }
-            }
-        })
+        // .state("transactions",{
+        //     url: "/transactions",
+        //     component: "/transactions",
+        //     resolve: {
+        //         transactions: function(TransactionsService) {
+        //             return TransactionsService.getAllTransactrions();
+        //         }
+        //     }
+        // })
 
-        .state("transfer", {
-            parent: "/home",
-            url: "/transfer",
-            templateUrl: "home/views/transfer.html",
-        })
+        // .state("transfer", {
+        //     parent: "/home",
+        //     url: "/transfer",
+        //     templateUrl: "home/views/transfer.html",
+        // })
 
         // .otherwise({ redirectTo: "/login" });
     }

@@ -18,7 +18,6 @@ module('peachtreeApp')
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.email, $scope.password).then(function(response) {
                 if(response.success) {
-                    console.log('login.controller login.success');
                     AuthenticationService.SetCredentials($scope.email, $scope.password);
                     $state.go('home');
                 } else {
