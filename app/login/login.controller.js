@@ -15,7 +15,7 @@ module('peachtreeApp')
             AuthenticationService.Login($scope.email, $scope.password, function(response) {
                 if(response.success) {
                     AuthenticationService.SetCredentials($scope.email, $scope.password);
-                    $location.path('/transactions');
+                    $location.path('/login');
                 } else {
                     $scope.error = response.message;
                     $scope.dataLoading = false;

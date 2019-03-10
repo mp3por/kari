@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "recipient": "HM",
+    "sender": "Main Account",
+    "amount": "£200.00",
+    "date": "08/03/2019",
+    "status": "sent"
+  },
+  {
+    "id": "2",
+    "recipient": "Gas Company",
+    "sender": "Main Account",
+    "amount": "£150.00",
+    "date": "08/03/2019",
+    "status": "received"
+  },
+  {
+    "id": "3",
+    "recipient": "Vili Kerkov",
+    "sender": "Main Account",
+    "amount": "£30.00",
+    "date": "09/03/2019",
+    "status": "received"
+  },
+  {
+    "id": "4",
+    "recipient": "Georgi Sofkin",
+    "sender": "Secret Account",
+    "amount": "£3000.00",
+    "date": "08/03/2019",
+    "status": "sent"
+}
+]

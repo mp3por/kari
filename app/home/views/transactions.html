@@ -1,0 +1,11 @@
+<h3>Transactions</h3>
+<ul>
+  <li ng-repeat="transaction in $ctrl.transactions">
+    <a ui-sref="transactions({ transactionId: transaction.id })">
+      {{transaction.recipient}}
+      {{transaction.amount}}
+      {{transaction.date}}
+      {{transaction.status}}
+    </a>
+  </li>
+</ul>

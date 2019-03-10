@@ -15,10 +15,26 @@ ptApp.config(['$stateProvider', function($stateProvider) {
           controller: "LoginController"
         })
 
-        .state("transactions", {
-          url: "/transactions",
-          templateUrl: "transactions/views/transactions.html",
-          controller: "TransactionsController",
+        .state("home", {
+          url: "/home",
+          templateUrl: "home/home.html",
+        //   controller: "HomeController",
+        })
+
+        .state("transactions",{
+            url: "/transactions",
+            component: "/transactions",
+            resolve: {
+                transactions: function(TransactionsService) {
+                    return TransactionsService.getAllTransactrions();
+                }
+            }
+        })
+
+        .state("transfer", {
+            parent: "/home",
+            url: "/transfer",
+            templateUrl: "home/views/transfer.html",
         })
 
         // .otherwise({ redirectTo: "/login" });
