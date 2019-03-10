@@ -1,14 +1,11 @@
 'use strict';
-
-import { async } from "q";
-
  
 angular.
-module('Authentication')
+module('peachtreeApp').component('Authentication')
  
 .controller('LoginController',
-    ['$scope', '$rootScope', '$location', 'AuthenticationService',
-    function ($scope, $rootScope, $location, AuthenticationService) {
+    ['$scope', '$rootScope', '$location', 'AuthenticationService', '$state',
+    function ($scope, $rootScope, $location, AuthenticationService, $state) {
 
         // reset login status
         AuthenticationService.ClearCredentials();

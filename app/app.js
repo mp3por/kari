@@ -1,27 +1,27 @@
-"use strict";
+'use strict';
 
-angular.module("Authentication", []);
-angular.module("Transactions", []);
+// angular.module("Authentication", [ui.router]);
+// angular.module("Transactions", [ui.router]);
 
-angular
-  .module("peachtreeApp", ["Authentication", "Transactions", "ngRoute"])
+let ptApp = angular
+  .module('peachtreeApp', ['ui.router']);
 
-  .config([
-    "$routeProvider",
-    function($routeProvider) {
-      $routeProvider
-        .when("/login", {
-          controller: "LoginController",
+ptApp.config(['$stateProvider', '$urlRouteProvider', function($stateProvider, $urlRouteProvider) {
+      $stateProvider
+        .state("login", {
+          url: "/login",
           templateUrl: "login/views/login.html",
+          controller: "LoginController",
           hideMenus: true
         })
 
-        .when("/transactions", {
+        .state("transactions", {
+          url: "/transactions",
+          templateUrl: "transactions/views/transactions.html",
           controller: "TransactionsController",
-          templateUrl: "transactions/views/transactions.html"
         })
 
-        .otherwise({ redirectTo: "/login" });
+        // .otherwise({ redirectTo: "/login" });
     }
   ])
 

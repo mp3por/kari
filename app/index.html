@@ -9,9 +9,9 @@
     <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
 
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
+    <!-- <script src="lib/angular-route/angular-route.js"></script> -->
     <script src="lib/angular-resource/angular-resource.js"></script>
-    <script src="lib/angular-ui-router.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.js"></script>
     <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
     <script src="app.js"></script>
     <script src="login/login.controller.js"></script>
@@ -22,7 +22,7 @@
     <div class="jumbotron">
       <div class="container">
         <div class="col-xs-offset-2 col-xs-8">
-          <div ng-view></div>
+          <ui-view></ui-view>
         </div>
       </div>
     </div>
