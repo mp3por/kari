@@ -1,16 +1,28 @@
 angular.module('peachtreeApp')
-.controller('transferController', ["$scope", function($scope){
-    
-    $scope.vili = 'OMG';
-    $scope.kari = { BLQT : true };
-    
-    $scope.transaction = {};
-    $scope.transaction.amount = 10;
-}])
+// .controller('transferController', )
 .directive('transferMoney', function(){
     return {
         templateUrl: 'home/views/transfer.html',  
-        controller: 'transferController'
+        controller: ["$scope", 'transactionService', function($scope, transactionService){
+    
+            console.log('transferController');
+            $scope.vili = 'OMG';
+            $scope.kari = { BLQT : true };
+            
+            $scope.transaction = {};
+            $scope.fetchTransaction = {};
+            $scope.transaction.amount = 10;
+        
+            $scope.sendMoney = function ( ) {
+                transactionService.makeTransfer($scope.transaction);
+            };
+
+            $scope.fetchParticularTransaction = function ()  {
+                transactionService.getTransactionById($scope.fetchTransaction.id).then(transaction => {
+                    $scope.fetchedTransaction = transaction;
+                });
+            };
+        }]
     };
 })
 .directive('transferMoneyTwo', function () {
