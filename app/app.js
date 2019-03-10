@@ -4,7 +4,7 @@
 // angular.module("Transactions", [ui.router]);
 
 let ptApp = angular
-  .module('peachtreeApp', ['ui.router']);
+  .module('peachtreeApp', ['ui.router', 'Authentication']);
 
 ptApp.config(['$stateProvider', function($stateProvider) {
       console.log('app.js - config');

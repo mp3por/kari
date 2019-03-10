@@ -11,6 +11,7 @@ module('peachtreeApp')
         AuthenticationService.ClearCredentials();
  
         $scope.login = async function () {
+            console.log('login');
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.email, $scope.password, function(response) {
                 if(response.success) {

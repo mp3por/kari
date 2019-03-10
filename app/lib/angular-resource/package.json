@@ -2,7 +2,7 @@
   "_args": [
     [
       "angular-resource@1.7.7",
-      "C:\\repos\\peachtree-task-ng"
+      "D:\\Work\\Kari\\peachtree-task-ng"
     ]
   ],
   "_from": "angular-resource@1.7.7",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/angular-resource/-/angular-resource-1.7.7.tgz",
   "_spec": "1.7.7",
-  "_where": "C:\\repos\\peachtree-task-ng",
+  "_where": "D:\\Work\\Kari\\peachtree-task-ng",
   "author": {
     "name": "Angular Core Team",
     "email": "angular-core+npm@google.com"

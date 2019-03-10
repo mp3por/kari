@@ -1,11 +1,12 @@
 <div>
-   
-    <h1>Make a transfer</h1>
-<div class="form">
-    <label>From Account: <input type="recipient" ng-model="transaction.recipient" ng-model-options="{ updateOn: 'blur' }" /></label><br />
-    <label>To Account:<input type="sender" ng-model="transaction.sender" ng-model-options="{ updateOn: 'blur' }" /></label><br />
-    <label>Amount: <input type="amount" ng-model="transaction.amount" ng-model-options="{ updateOn: 'blur' }" /></label><br />
-  </div>
+    <!-- <h1>Make a transfer</h1>
+    <div class="form">
+        <label>From Account: <input type="recipient" ng-model="transaction.recipient" ng-model-options="{ updateOn: 'blur' }" /></label><br />
+        <label>To Account: <input type="sender" ng-model="transaction.sender" ng-model-options="{ updateOn: 'blur' }" /></label><br />
+        <label>Amount: <input type="amount" ng-model="transaction.amount" ng-model-options="{ updateOn: 'blur' }" /></label><br />
+    </div> -->
+
+    <transfer-money></transfer-money>
     
     <a ui-sref="transactions", ui-sref-active="active">Transactions list</a>
     <ui-view></ui-view>
